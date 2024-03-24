@@ -1,0 +1,32 @@
+.tabContainer{
+    width: 70%;
+    margin: auto;
+    background-color: purple;
+}
+.view{
+    background-color: aliceblue;
+    text-align: center;
+    font-weight: bolder;
+}
+.list{
+    text-align: center;
+    color: white;
+}
+button{
+    margin-left: 484px;
+    border-radius: 15px;
+}
+table{
+        margin: auto;
+        border-collapse: collapse;
+    
+    }
+    thead{
+        background-color: whitesmoke;
+        color: black;
+        font-size: larger;
+        
+    }
+    thead{
+        padding: 10px;
+    }
