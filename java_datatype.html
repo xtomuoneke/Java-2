@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datatype Checker</title>
+    <link rel="stylesheet" href="datatype.css">
+</head>
+<body>
+    <div class="container">
+    <h1 id="display">This is an App to Check Datatypes in JavaScript</h1>
+    <p id="comfirm">Click the button below to Check it</p>
+    <button onclick="dataChecker()">Check Data</button>
+
+    <script>
+        
+
+        function dataChecker(){
+
+           var userInput  =  prompt('Enter the Data Here: ');
+           var numberValue = parseInt(userInput);
+        
+          if(numberValue){
+            alert('The datatype is a Number');
+          }else{
+            alert('The datatype is a String');
+          }
+        }
+    </script>
+    </div>
+    
+</body>
+</html>

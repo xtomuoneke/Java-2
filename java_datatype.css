@@ -1,0 +1,26 @@
+body{
+    background-color: blueviolet;
+}
+.container{
+    width: 40%;
+    margin: auto;
+    background-color: aquamarine;
+}
+button{
+    padding: 15px;
+    background-color: white;
+    border: 1px solid gray;
+    color: black;
+    margin-left: 234px;
+    border-radius: 50%;
+    background-color: blueviolet;
+    color: white;
+    font-weight: bolder;
+}
+#display, #comfirm{
+    text-align: center;
+}
+#comfirm{
+    color: blue;
+    font-weight: bold;
+}
