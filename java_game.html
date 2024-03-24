@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="java_game.css">
+</head>
+<body>
+    <div class="gameContainer">
+        <div class="conHead">
+        <h1>Welcome to Game App!</h1>
+        <p class="fillq" style="color: yellow; font-weight: bold;">Do you want to play? First fill the form below</p>
+        <form action="">
+            <input type="text" id="name" placeholder="Enter Your Name">
+            <input type="number" name="" id="passCode" placeholder="Enter Your Passcode">
+            <input type="email" name="" id="candEmail" placeholder="Enter Your Email">
+        </form>
+        </div>
+        <button onclick="playGame()">Play Game</button>
+    </div>
+    <script>
+        var nummj;
+        function getRandomNum(min, max){
+            
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            var numm = Math.floor(Math.random()*(max-min+1))+min;
+            return numm;
+            
+        }
+        function playGame(){
+            alert('In this game you can guess a random number between 20 and 40 for a maximum of 4 times');
+            var checkValue = prompt('Do you want to play it? Answer y or n ?', 'y');
+            // checkValue=='y'?'true':'no';
+            if(checkValue==='y'){
+                numm = getRandomNum(20,40);
+                x=0;
+                for(x=0;x<4;x++){
+                  var clientInput = prompt('Guess the number between 20 and 40:');
+                  clientInput = parseInt(clientInput);
+                  if(clientInput==numm){
+                    alert('Congratulations!!! You won the game');
+                    
+                  }else{
+                    alert('Sorry, you failed. Try again');
+                  }
+                }
+            }else{
+                alert('Good bye!!!');
+                return;
+            }
+        }
+
+        
+    </script>
+    
+</body>
+</html>
