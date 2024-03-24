@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="deName.css">
+</head>
+<body>
+    <div class="tabContainer">
+    <h1 class="list">List of Names</h1>
+    <p class="view">To view the full list of students in the data base, click the button below</p>
+    <button id="tabOne" onclick="addTableElements()" style="padding: 16px; background-color: blue; color: white;">View List</button>
+    <table id="myTable">
+        <thead>
+            <th>S/N</th>
+            <th>Name of Student</th>
+            <th>Students Passcode</th>
+        </thead>
+
+
+    </table>
+    <p class="view">Check the expelled students with their serial number</p>
+    <button id="tabTwo" onclick="deleteTableElements()" style="padding: 16px; background-color: blue; color: white;">Check</button>
+    <table id="myTable1">
+        <thead>
+            <th>S/N</th>
+            <th>Name of Student</th>
+            <th>Students Passcode</th>
+        </thead>
+    </table>
+    
+    
+    
+
+
+    <script>
+        var studentsName = ['Ogbonna Christopher', 'Moses Odiaso', 'Ntoh Johnson', 'Peter Daniel', 'Animaku Michael',
+             'Cyril Oseyamhen', 'Uvo Kingsley', 'Emmanuel Reuben', 'Chinonso Joseph', 'Ugwu Abel' ];
+        var studentsPasscode = [89562,45666,65052,12122,80345,77654,15243,55043,22894,90002];
+        function addTableElements(){
+            for(x=0;x<10;x++){
+                var table = document.getElementById('myTable');
+                var myRow = table.insertRow();
+                var firstCell = myRow.insertCell();
+                var secondCell = myRow.insertCell();
+                var thirdCell = myRow.insertCell();
+                firstCell.innerHTML = x+1;
+                secondCell.innerHTML = studentsName[x];
+                thirdCell.innerHTML = studentsPasscode[x];
+
+            }
+        }
+        function deleteTableElements(){
+            
+                var expelledStudents = prompt('Enter the serial number of the student: ');
+                var userInput = parseInt(expelledStudents);
+                for(x=0;x<10;x++){
+                if(userInput==0||userInput==2||userInput==4||userInput==5||userInput==7||userInput==8){
+                    alert('Mr. '+studentsName[userInput]+' is not among the expelled students');
+                    return;
+                }else if(x>=10||x==''){
+                    alert('Sorry, there is no student with index number of '+userInput+' in our database');
+                    return;
+                }else{
+                    alert('Mr.'+studentsName[userInput]+' is among the expelled students and his name will be deleted');
+                    var askUser = alert('Do you want to see the updated list');
+                    if(askUser=='yes'){
+                        var deletedIndex = userInput;
+                        for(x=0;x<9;x++){
+                            if(x==deletedIndex){
+                                continue;
+                            }else{
+                                var table = document.getElementById('myTable1');
+                                var myRow = table.insertRow();
+                                var firstCell = myRow.insertCell();
+                                var secondCell = myRow.insertCell();
+                                var thirdCell = myRow.insertCell();
+                                firstCell.innerHTML = x+1;
+                                secondCell.innerHTML = studentsName[x];
+                                thirdCell.innerHTML = studentsPasscode[x];
+                            }
+                        }
+                    }
+                    
+                    
+
+                }
+            }
+        }
+        document.getElementById('tabOne').style.display = 'block'
+    //             }else if(userInput==1||userInput==2||userInput==6||userInput==9){
+    //                 alert('Mr.'+studentsName[userInput]+' is among the expelled students and his name will be deleted')
+    //                 var deletedIndex = userInput;
+    //                 var askUser = alert('Do you want to see the updated list')
+    //             //     for(x=0;x<9;x++)
+    //             //     if(askUser=='yes'){
+    //             //     if(x==deletedIndex){
+    //             //     continue;
+    //             //     }else{
+    //             // var table = document.getElementById('myTable');
+    //             // var myRow = table.insertRow();
+    //             // var firstCell = myRow.insertCell();
+    //             // var secondCell = myRow.insertCell();
+    //             // var thirdCell = myRow.insertCell();
+    //             // firstCell.innerHTML = x+1;
+    //             // secondCell.innerHTML = studentsName[x];
+    //             // thirdCell.innerHTML = studentsPasscode[x];
+
+    //             //     }else{
+    //             //     alert('Good bye');
+    //             //     return
+    //             // }
+    //             // studentsName.splice(userInput,1);
+    //             // studentsPasscode.splice(userInput,1);
+    //             // var newStudentsName = studentsName;
+    //             // var newStudentsPasscode = studentsPasscode;
+
+                
+    //             }else{
+    //                 alert('Sorry, there is no student with index number of '+userInput+' in our database')
+    //                 return;
+                
+                
+                
+
+    //         }
+    //     }
+    // }
+            
+        
+    
+        
+
+
+            
+            
+            
+    </script>
+    </div>
+
+    
+</body>
+</html>
